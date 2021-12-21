@@ -1,0 +1,6 @@
+<h2>Results</h2>
+<br />
+{% for i in related_tags %}
+    <span onclick="document.location = '/view_tag/tag={{ i | replace('#', '**')}}'" style="cursor: pointer">{{ i }}</span>
+    <hr />
+{% endfor %}

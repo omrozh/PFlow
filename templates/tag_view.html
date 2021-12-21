@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pornflow | Tag View</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4246ac988c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      font-family: 'Poppins';
+      width: 100%;
+      height: 100vh;
+      overflow-x: hidden;
+    "
+  >
+    <center>
+      <img
+        src="https://www.socialsnake.ml/76387506pornsflow-removebg-preview.png"
+        alt=""
+        style="width: 200px; margin-top: 10px"
+      />
+
+      {% for i in related_videos %}
+            <video
+            style="width: 80vw"
+            src="/{{ i.video_path }}"
+            controls
+            ></video>
+      <br>
+      <a href="/?video={{ i.id }}" style="cursor: pointer; color: white; text-decoration: none">{{ i.explanation }}</a>
+          <br>
+
+          <br>
+        {% endfor %}
+    </center>
+    <span style="opacity: 0">Pornflow</span>
+  </body>
+</html>

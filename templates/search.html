@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pornflow | Search Tags</title>
+    <style>
+      body {
+        font-family: "Poppins";
+        background-color: #111;
+        color: white;
+      }
+      .searchInput {
+        border: solid 1px violet;
+        outline: none;
+        width: 80vw;
+        font-size: 1.5rem;
+        text-align: center;
+        border-radius: 5px;
+        background: transparent;
+        color: white;
+      }
+      .searchInput:hover {
+        border: 1px solid white;
+      }
+      .searchInput::placeholder {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <img
+        src="https://www.socialsnake.ml/76387506pornsflow-removebg-preview.png"
+        alt=""
+        style="width: 200px; margin-top: 10px"
+      />
+    </center>
+    <div>
+      <center>
+        <input
+        oninput="searchFunc()"
+        class="searchInput"
+        id="searchInput"
+        type="text"
+        placeholder="Search"
+      />
+      </center>
+    </div>
+    <div style="margin: 5%; font-size: 1rem" id="searchData">
+      <h2>Results</h2>
+    </div>
+    <script>
+      function searchFunc() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/searchReturn", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function () {
+          document.getElementById("searchData").innerHTML = xhr.responseText;
+        };
+
+        xhr.send("search_term=" + document.getElementById("searchInput").value);
+      }
+    </script>
+  </body>
+</html>
