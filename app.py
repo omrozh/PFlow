@@ -13,7 +13,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 app = flask.Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
-app.config["SECRET_KEY"] = "mCa63F18YGdUb4ZsUhR7Wv52LT3tVgdE"
+app.config["SECRET_KEY"] = "XXXXX"
 app.config["VIDEO_UPLOAD_FOLDER"] = "videos"
 app.config["CHANNEL_BG_UPLOAD_FOLDER"] = "channel_backgrounds"
 
